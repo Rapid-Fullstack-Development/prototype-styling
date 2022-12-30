@@ -9,7 +9,7 @@ export class App extends React.Component {
         super(properties);
 
         this.state = {
-            sidebarOpen: false,
+            sidebarOpen: true,
         };
     }
 
@@ -17,35 +17,33 @@ export class App extends React.Component {
         return (
             <div className="host">
                 <div id="sidebar" className={this.state.sidebarOpen ? "open" : ""} >
-                    <h3>
+                    <h1 className="text-2xl mt-2 mb-8">
                         Photosphere
-                    </h3>
+                    </h1>
 
-                    <br />
-
-                    <h3>Storage</h3>
-                    <h3>Local</h3>
-                    <h3>Upload</h3>
-                    <h3>Favorites</h3>
-                    <h3>Collections</h3>
-                    <h3>Deleted</h3>
+                    <div className="text-lg">Storage</div>
+                    <div className="text-lg">Local</div>
+                    <div className="text-lg">Upload</div>
+                    <div className="text-lg mt-6">Favorites</div>
+                    <div className="text-lg">Collections</div>
+                    <div className="text-lg">Deleted</div>
 
                 </div>
 
                 <div id="content" className={this.state.sidebarOpen ? "open" : ""} >
                     <BrowserRouter>
-                            <div className="nav">
-                                <button 
-                                    className="menu" 
-                                    onClick={() => this.setState({ sidebarOpen: !this.state.sidebarOpen })}
-                                    >
+                        <div className="flex flex-row items-center  pl-1 pt-1 pb-2">
+                            <button 
+                                className="menu" 
+                                onClick={() => this.setState({ sidebarOpen: !this.state.sidebarOpen })}
+                                >
                                 <div></div>
                                 <div></div>
                                 <div></div>
                             </button>
-                            <div className="title">Photosphere</div>
-                            <Link to="/" className="link">Home</Link>
-                            <Link to="/upload" className="link">Upload</Link>
+                            <h1 className="title text-2xl ml-2">Photosphere</h1>
+                            <Link to="/" className="ml-2 mt-1">Home</Link>
+                            <Link to="/upload" className="ml-2 mt-1">Upload</Link>
                         </div>
                         <Routes>
                             <Route 
