@@ -1,11 +1,9 @@
 import React from "react";
 import axios from "axios";
 import { Gallery } from "../lib/gallery";
+const gallery = require("../gallery.json");
 
 const BASE_URL = process.env.BASE_URL;
-if (!BASE_URL) {
-    throw new Error(`Set BASE_URL environment variable to the URL for the Photosphere backend.`);
-}
 
 console.log(`Expecting backend at ${BASE_URL}.`);
 
@@ -29,7 +27,7 @@ export class GalleryPage extends React.Component {
     render() {
         return (
             <Gallery 
-                items={this.state.items}    
+                items={gallery}
                 baseUrl={BASE_URL}
                 />
         );

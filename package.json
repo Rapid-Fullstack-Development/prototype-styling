@@ -4,8 +4,8 @@
   "description": "The frontend for the Photosphere application.",
   "source": "src/index.html",
   "scripts": {
-    "start": "cross-env BASE_URL=http://localhost:3000 parcel",
-    "build": "cross-env BASE_URL=http://localhost:3000 parcel build",
+    "start": "cross-env BASE_URL= parcel",
+    "build": "cross-env BASE_URL= parcel build",
     "test": "jest",
     "test:watch": "jest --watch"
   },
