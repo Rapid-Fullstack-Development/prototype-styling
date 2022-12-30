@@ -1,4 +1,4 @@
-# Photosphere frontend
+# Photosphere user interface and styling prototype
 
 A prototype for the user interface and styling of [the Photosphere frontend](https://rapidfullstackdevelopment.com/example-application).
 
