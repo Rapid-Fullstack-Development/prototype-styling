@@ -82,24 +82,24 @@ export class App extends React.Component {
 
                                     <div className="flex-grow" />
 
-                                    <Link to="/" className="mr-6">
+                                    <Link to="/" className="mr-4 sm:mr-6">
                                         <div className="flex flex-row items-center text-gray-700">
                                             <i className="w-6 text-center fa-solid fa-cloud"></i>
-                                            <div className="ml-2">Storage</div>
+                                            <div className="hidden sm:block ml-2">Storage</div>
                                         </div>
                                     </Link>
 
-                                    <Link to="/" className="mr-6">
+                                    <Link to="/" className="mr-4 sm:mr-6">
                                         <div className="flex flex-row items-center text-gray-700">
                                             <i className="w-6 text-center fa-solid fa-hard-drive"></i>
-                                            <div className="ml-2">Local</div>
+                                            <div className="hidden sm:block ml-2">Local</div>
                                         </div>
                                     </Link>
 
-                                    <Link to="/upload" className="mr-8">
+                                    <Link to="/upload" className="mr-4 sm:mr-8">
                                         <div className="flex flex-row items-center text-gray-700">
                                             <i className="w-6 text-center fa-solid fa-upload"></i>
-                                            <div className="ml-2">Upload</div>
+                                            <div className="hidden sm:block ml-2">Upload</div>
                                         </div>
                                     </Link>
                                 </div>
