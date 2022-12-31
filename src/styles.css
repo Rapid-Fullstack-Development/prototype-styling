@@ -4,10 +4,6 @@ body {
     overflow-x: hidden;
 }
 
-.title {
-    width: 150px;
-}
-
 #host {
     position: absolute;
     top: 0;
@@ -50,17 +46,5 @@ body {
 }
 
 #content.open {
-    left: 185px;
-}
-
-button.menu {
-    background: transparent;
-    padding: 3px
-}
-
-button.menu div {
-    width: 20px;
-    height: 2px;
-    background-color: black;
-    margin: 3px 0;
+    left: 171px;
 }
