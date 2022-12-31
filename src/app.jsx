@@ -21,12 +21,34 @@ export class App extends React.Component {
                         Photosphere
                     </h1>
 
-                    <div className="text-lg">Storage</div>
-                    <div className="text-lg">Local</div>
-                    <div className="text-lg">Upload</div>
-                    <div className="text-lg mt-6">Favorites</div>
-                    <div className="text-lg">Collections</div>
-                    <div className="text-lg">Deleted</div>
+                    <div className="flex flex-row items-center pl-2 text-gray-700">
+                        <i className="w-12 fa-solid fa-cloud"></i>
+                        <div className="">Storage</div>
+                    </div>
+                    <div className="flex flex-row items-center pl-2 mt-2 text-gray-700">
+                        <i className="w-12 fa-solid fa-hard-drive"></i>
+                        <div className="">Local</div>
+                    </div>
+
+                    <div className="flex flex-row items-center pl-2 mt-2 text-gray-700">
+                        <i className="w-12 fa-solid fa-upload"></i>
+                        <div className="">Upload</div>
+                    </div>
+
+                    <div className="flex flex-row items-center pl-2 mt-8 text-gray-700">
+                        <i className="w-12 fa-regular fa-star"></i>
+                        <div className="">Favorites</div>
+                    </div>
+
+                    <div className="flex flex-row items-center pl-2 mt-2 text-gray-700">
+                        <i className="w-12 fa-regular fa-images"></i>
+                        <div className="">Collections</div>
+                    </div>
+
+                    <div className="flex flex-row items-center pl-2 mt-2 text-gray-700">
+                        <i className="w-12 fa-regular fa-trash-can"></i>
+                        <div className="">Deleted</div>
+                    </div>
 
                 </div>
 
