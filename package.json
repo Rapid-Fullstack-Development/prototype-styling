@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "build-gh-pages": "parcel build  --public-url . --dist-dir docs",
+    "build-gh-pages": "parcel build  --public-url https://rapid-fullstack-development.github.io/prototype-styling/ --dist-dir docs",
     "test": "jest",
     "test:watch": "jest --watch"
   },

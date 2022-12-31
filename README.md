@@ -67,3 +67,14 @@ live-server
 ```
 
 The web page should automatically be displayed in your browser.
+
+
+## Build for GitHub Pages
+
+Changed `BrowserRouter` to `HashRouter`.
+
+Building using 
+
+```bash
+npm run build-gh-pages
+```
