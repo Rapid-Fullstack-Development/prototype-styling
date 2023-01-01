@@ -17,6 +17,41 @@ export class App extends React.Component {
         return (
             <BrowserRouter>
                 <div className="host">
+                    <div id="navbar" >
+                        <div className="flex flex-row items-center pl-4 pt-2 pb-2">
+                            <button 
+                                onClick={() => this.setState({ sidebarOpen: !this.state.sidebarOpen })}
+                                >
+                                <i className="fa-solid fa-bars"></i>
+                            </button>
+
+                            <h1 className="text-xl ml-3">Photosphere</h1>
+
+                            <div className="flex-grow" />
+
+                            <Link to="/" className="mr-4 sm:mr-6">
+                                <div className="flex flex-row items-center text-gray-700">
+                                    <i className="w-6 text-center fa-solid fa-cloud"></i>
+                                    <div className="hidden sm:block ml-2">Storage</div>
+                                </div>
+                            </Link>
+
+                            <Link to="/" className="mr-4 sm:mr-6">
+                                <div className="flex flex-row items-center text-gray-700">
+                                    <i className="w-6 text-center fa-solid fa-hard-drive"></i>
+                                    <div className="hidden sm:block ml-2">Local</div>
+                                </div>
+                            </Link>
+
+                            <Link to="/upload" className="mr-8">
+                                <div className="flex flex-row items-center text-gray-700">
+                                    <i className="w-6 text-center fa-solid fa-upload"></i>
+                                    <div className="hidden sm:block ml-2">Upload</div>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
+
                     <div id="sidebar" className={this.state.sidebarOpen ? "open" : ""} >
                         <div className="flex flex-row items-center mt-2 mb-8">
                             <h1 className="text-xl">
@@ -70,40 +105,6 @@ export class App extends React.Component {
                     </div>
 
                     <div id="content" className={this.state.sidebarOpen ? "open" : ""} >
-                            {!this.state.sidebarOpen &&
-                                <div className="flex flex-row items-center pl-2 pt-2 pb-2">
-                                    <button 
-                                        onClick={() => this.setState({ sidebarOpen: !this.state.sidebarOpen })}
-                                        >
-                                        <i className="fa-solid fa-bars"></i>
-                                    </button>
-
-                                    <h1 className="text-2xl ml-4">Photosphere</h1>
-
-                                    <div className="flex-grow" />
-
-                                    <Link to="/" className="mr-4 sm:mr-6">
-                                        <div className="flex flex-row items-center text-gray-700">
-                                            <i className="w-6 text-center fa-solid fa-cloud"></i>
-                                            <div className="hidden sm:block ml-2">Storage</div>
-                                        </div>
-                                    </Link>
-
-                                    <Link to="/" className="mr-4 sm:mr-6">
-                                        <div className="flex flex-row items-center text-gray-700">
-                                            <i className="w-6 text-center fa-solid fa-hard-drive"></i>
-                                            <div className="hidden sm:block ml-2">Local</div>
-                                        </div>
-                                    </Link>
-
-                                    <Link to="/upload" className="mr-4 sm:mr-8">
-                                        <div className="flex flex-row items-center text-gray-700">
-                                            <i className="w-6 text-center fa-solid fa-upload"></i>
-                                            <div className="hidden sm:block ml-2">Upload</div>
-                                        </div>
-                                    </Link>
-                                </div>
-                            }
                             <Routes>
                                 <Route 
                                     path="/" 

@@ -13,8 +13,10 @@ body {
     overflow: hidden;
 }
 
+/* Sidebar */
+
 #sidebar {
-    z-index: 2; 
+    z-index: 1000; 
     position: fixed; 
     top: 0; 
     bottom: 0; 
@@ -22,6 +24,7 @@ body {
     will-change: transform; 
     width: 170px;
     padding-left: 10px;
+    background-color: white;
 
     /* Left sidebar */
     left: 0;
@@ -47,4 +50,21 @@ body {
 
 #content.open {
     left: 171px;
+}
+
+/* Nav bar */
+
+#navbar {
+    z-index: 500;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 42px;
+    background-color: white;
+    border-bottom: 1px solid rgb(218,220,224);
+}
+
+#content {
+    padding-top: 42px;
 }
