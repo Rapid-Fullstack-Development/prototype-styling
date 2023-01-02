@@ -38,8 +38,10 @@ body {
     transform: translateX(0%);
 }
 
-#content.open {
-    padding-left: 171px;
+@media (min-width: 640px) {
+    #content.open {
+        padding-left: 171px;
+    }
 }
 
 /* Nav bar */
