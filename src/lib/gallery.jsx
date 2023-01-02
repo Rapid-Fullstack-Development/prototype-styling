@@ -11,17 +11,24 @@ export class Gallery extends React.Component {
 
         this.state = {};
 
-        this.containerRef = React.createRef();        
+        this.containerRef = React.createRef();
     }
 
     async componentDidMount() {
         this.onResize();
 
-        window.addEventListener("resize", this.onResize);
+        this.resizeObserver = new ResizeObserver(entries => {
+            // 
+            // Monitor for changes in the size of this element.
+            //
+            this.onResize();
+        });
+
+        this.resizeObserver.observe(this.containerRef.current);
     }
 
     componentWillUnmount() {
-        window.removeEventListener("resize", this.onResize);        
+        this.resizeObserver.unobserve(this.containerRef.current);
     }
 
     onResize = () => {
