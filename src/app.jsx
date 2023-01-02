@@ -16,7 +16,7 @@ export class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <div id="navbar" >
+                <div id="navbar">
                     <div className="flex flex-row items-center pl-4 pt-2 pb-2">
                         <button 
                             onClick={() => this.setState({ sidebarOpen: !this.state.sidebarOpen })}
@@ -26,26 +26,35 @@ export class App extends React.Component {
 
                         <h1 className="text-xl ml-4">Photosphere</h1>
 
-                        <Link to="/" className="ml-auto mr-4 sm:mr-6">
+                        <NavLink 
+                            className="ml-auto mr-4 sm:mr-6"
+                            to="/cloud"
+                            >
                             <div className="flex flex-row items-center text-gray-700">
                                 <i className="w-6 text-center fa-solid fa-cloud"></i>
-                                <div className="hidden sm:block ml-2">Storage</div>
+                                <div className="hidden sm:block ml-2">Cloud</div>
                             </div>
-                        </Link>
+                        </NavLink>
 
-                        <Link to="/" className="mr-4 sm:mr-6">
+                        <NavLink 
+                            className="mr-4 sm:mr-6"
+                            to="/local"
+                            >
                             <div className="flex flex-row items-center text-gray-700">
                                 <i className="w-6 text-center fa-solid fa-hard-drive"></i>
                                 <div className="hidden sm:block ml-2">Local</div>
                             </div>
-                        </Link>
+                        </NavLink>
 
-                            <Link to="/upload" className="mr-8">
+                        <NavLink
+                            className="mr-8"
+                            to="/upload"
+                            >
                             <div className="flex flex-row items-center text-gray-700">
                                 <i className="w-6 text-center fa-solid fa-upload"></i>
                                 <div className="hidden sm:block ml-2">Upload</div>
                             </div>
-                        </Link>
+                        </NavLink>
                     </div>
                 </div>
 
@@ -63,26 +72,26 @@ export class App extends React.Component {
                         </button>
                     </div>
 
-                    <Link to="/" className="">
+                    <NavLink to="/cloud">
                         <div className="flex flex-row items-center pl-1 text-gray-700">
                             <i className="w-12 text-center fa-solid fa-cloud"></i>
-                            <div className="">Storage</div>
+                            <div className="">Cloud</div>
                         </div>
-                    </Link>
+                    </NavLink>
 
-                    <Link to="/" className="">
+                    <NavLink to="/local">
                         <div className="flex flex-row items-center pl-1 mt-2 text-gray-700">
                             <i className="w-12 text-center fa-solid fa-hard-drive"></i>
                             <div className="">Local</div>
                         </div>
-                    </Link>
+                    </NavLink>
 
-                    <Link to="/upload" className="">
+                    <NavLink to="/upload">
                         <div className="flex flex-row items-center pl-1 mt-2 text-gray-700">
                             <i className="w-12 text-center fa-solid fa-upload"></i>
                             <div className="">Upload</div>
                         </div>
-                    </Link>
+                    </NavLink>
 
                     <div className="flex flex-row items-center pl-1 mt-8 text-gray-700 cursor-pointer">
                         <i className="w-12 text-center fa-regular fa-star"></i>
@@ -104,12 +113,30 @@ export class App extends React.Component {
                 <div id="content" className={this.state.sidebarOpen ? "open" : ""} >
                         <Routes>
                             <Route 
-                                path="/" 
+                                exact
+                                path="/cloud" 
                                 element={<GalleryPage />} 
                                 />
                             <Route 
+                                exact
+                                path="/local" 
+                                element={<GalleryPage />} 
+                                />
+                            <Route 
+                                exact
                                 path="/upload" 
                                 element={<UploadPage />} 
+                                />
+
+                            <Route
+                                exact
+                                path="/" 
+                                element={
+                                    <Navigate 
+                                        replace
+                                        to="/cloud"
+                                        />
+                                }
                                 />
                     </Routes>
                 </div>

@@ -6,6 +6,22 @@ body {
     background-color: #F3F4F6;
 }
 
+/* Menu */
+
+#navbar a {
+    padding: 0.25rem;
+    padding-right: 0.5rem; 
+    border-bottom: 2px solid transparent;
+}
+
+#navbar .active {
+    border-bottom: 2px solid black;
+}
+
+#sidebar .active>div>div {
+    border-bottom: 2px solid black;
+}
+
 /* Sidebar */
 
 #sidebar {
