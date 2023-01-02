@@ -14,6 +14,10 @@ export class App extends React.Component {
         };
     }
 
+    notImplemented() {
+        alert("This is a non-function mockup and none of these features are implemented. See the 'Learn more' page for information.");
+    }
+
     render() {
         return (
             <BrowserRouter>
@@ -104,20 +108,29 @@ export class App extends React.Component {
                         </div>
                     </NavLink>
 
-                    <div className="flex flex-row items-center pl-1 mt-8 text-gray-700 cursor-pointer">
+                    <button 
+                        className="flex flex-row items-center pl-1 mt-8 text-gray-700 cursor-pointer"
+                        onClick={this.notImplemented}
+                        >
                         <i className="w-12 text-center fa-regular fa-star"></i>
                         <div className="">Favorites</div>
-                    </div>
+                    </button>
 
-                    <div className="flex flex-row items-center pl-1 mt-2 text-gray-700 cursor-pointer">
+                    <button 
+                        className="flex flex-row items-center pl-1 mt-2 text-gray-700 cursor-pointer"
+                        onClick={this.notImplemented}
+                        >
                         <i className="w-12 text-center fa-regular fa-images"></i>
                         <div className="">Collections</div>
-                    </div>
+                    </button>
 
-                    <div className="flex flex-row items-center pl-1 mt-2 text-gray-700 cursor-pointer">
+                    <button 
+                        className="flex flex-row items-center pl-1 mt-2 text-gray-700 cursor-pointer"
+                        onClick={this.notImplemented}
+                        >
                         <i className="w-12 text-center fa-regular fa-trash-can"></i>
                         <div className="">Deleted</div>
-                    </div>
+                    </button>
 
                     <NavLink to="/info">
                         <div className="flex flex-row items-center pl-1 mt-12 text-gray-700">
