@@ -1,6 +1,7 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes, HashRouter, NavLink, Navigate } from "react-router-dom";
 import { GalleryPage } from "./pages/gallery";
+import { InfoPage } from "./pages/info";
 import { UploadPage } from "./pages/upload";
 
 export class App extends React.Component {
@@ -17,17 +18,17 @@ export class App extends React.Component {
         return (
             <BrowserRouter>
                 <div id="navbar">
-                    <div className="flex flex-row items-center pl-4 pt-2 pb-2">
+                    <div className="flex flex-row items-center pl-2 pt-2 pb-2">
                         <button 
                             onClick={() => this.setState({ sidebarOpen: !this.state.sidebarOpen })}
                             >
                             <i className="fa-solid fa-bars"></i>
                         </button>
 
-                        <h1 className="text-xl ml-4">Photosphere</h1>
+                        <h1 className="text-xl ml-2">Photosphere</h1>
 
                         <NavLink 
-                            className="ml-auto mr-4 sm:mr-6"
+                            className="ml-auto mr-1"
                             to="/cloud"
                             >
                             <div className="flex flex-row items-center text-gray-700">
@@ -37,7 +38,7 @@ export class App extends React.Component {
                         </NavLink>
 
                         <NavLink 
-                            className="mr-4 sm:mr-6"
+                            className="mr-1"
                             to="/local"
                             >
                             <div className="flex flex-row items-center text-gray-700">
@@ -53,6 +54,16 @@ export class App extends React.Component {
                             <div className="flex flex-row items-center text-gray-700">
                                 <i className="w-6 text-center fa-solid fa-upload"></i>
                                 <div className="hidden sm:block ml-2">Upload</div>
+                            </div>
+                        </NavLink>
+
+                        <NavLink
+                            className="mr-2"
+                            to="/info"
+                            >
+                            <div className="flex flex-row items-center text-gray-700">
+                                <i className="w-6 text-center fa-solid fa-circle-exclamation"></i>
+                                <div className="hidden sm:block ml-2">Learn more</div>
                             </div>
                         </NavLink>
                     </div>
@@ -108,6 +119,13 @@ export class App extends React.Component {
                         <div className="">Deleted</div>
                     </div>
 
+                    <NavLink to="/info">
+                        <div className="flex flex-row items-center pl-1 mt-12 text-gray-700">
+                            <i className="w-12 text-center fa-solid fa-circle-exclamation"></i>
+                            <div className="">Learn more</div>
+                        </div>
+                    </NavLink>
+
                 </div>
 
                 <div id="content" className={this.state.sidebarOpen ? "open" : ""} >
@@ -126,6 +144,12 @@ export class App extends React.Component {
                                 exact
                                 path="/upload" 
                                 element={<UploadPage />} 
+                                />
+
+                            <Route 
+                                exact
+                                path="/info" 
+                                element={<InfoPage />} 
                                 />
 
                             <Route

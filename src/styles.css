@@ -84,3 +84,14 @@ body {
 #upload-drop-area.highlight {
     border-color: blue;
 }
+
+/* Info page */
+
+#info-area {
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    max-width: 480px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: white;
+}
