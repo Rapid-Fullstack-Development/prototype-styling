@@ -65,7 +65,7 @@ export class UploadPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="p-4">
                 <div 
                     id="upload-drop-area"
                     className={this.state.dragOver ? "highlight" : ""}
@@ -86,10 +86,10 @@ export class UploadPage extends React.Component {
                         }}
                         />
                     <label 
-                        className="button inline-block p-4 cursor-pointer rounded-lg border border-gray-200 hover:border-gray-400 border-solid bg-gray-100" 
+                        className="inline-block p-4 cursor-pointer rounded-lg border-2 border-blue-200 hover:border-blue-400 border-solid bg-blue-100" 
                         htmlFor="upload-file-input"
                         >
-                        Select some files
+                        Choose files
                     </label>
                 </div>
             </div>

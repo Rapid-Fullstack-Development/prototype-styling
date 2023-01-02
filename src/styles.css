@@ -59,9 +59,9 @@ body {
 #upload-drop-area {
     border: 2px dashed #ccc;
     border-radius: 20px;
-    width: 480px;
+    max-width: 480px;
     margin: 100px auto;
-    padding: 40px;
+    padding: 30px;
     background-color: white;
 }
 
