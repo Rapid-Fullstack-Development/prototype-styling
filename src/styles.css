@@ -3,6 +3,7 @@ body {
     overflow-x: hidden;
     font-family: 'Roboto', Arial, sans-serif;
     color: rgb(60,64,67);
+    background-color: #F3F4F6;
 }
 
 /* Sidebar */
@@ -60,7 +61,8 @@ body {
     border-radius: 20px;
     width: 480px;
     margin: 100px auto;
-    padding: 20px;
+    padding: 40px;
+    background-color: white;
 }
 
 #upload-drop-area.highlight {
