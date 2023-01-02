@@ -38,18 +38,8 @@ body {
     transform: translateX(0%);
 }
 
-#content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    transition: left .1s ease-out, right .1s ease-out;
-}
-
 #content.open {
-    left: 171px;
+    padding-left: 171px;
 }
 
 /* Nav bar */
