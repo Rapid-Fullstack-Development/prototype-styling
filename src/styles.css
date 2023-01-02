@@ -1,6 +1,8 @@
 body {
     /* Prevent horizontal scrolling of the photo gallery. */
     overflow-x: hidden;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: rgb(60,64,67);
 }
 
 /* Sidebar */
