@@ -74,7 +74,7 @@ export class App extends React.Component {
                 </div>
 
                 <div id="sidebar" className={this.state.sidebarOpen ? "open" : ""} >
-                    <div className="flex flex-row items-center mt-2 mb-8">
+                    <div className="flex flex-row items-center mt-4 mb-8">
                         <h1 className="text-xl">
                             Photosphere
                         </h1>
