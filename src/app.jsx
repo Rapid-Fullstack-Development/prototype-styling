@@ -23,7 +23,7 @@ export class App extends React.Component {
 
     render() {
         return (
-            <BrowserRouter>
+            <HashRouter>
                 <div id="navbar">
                     <div className="flex flex-row items-center pl-2 pt-3 pb-2">
                         <button 
@@ -170,12 +170,20 @@ export class App extends React.Component {
                             <Route 
                                 exact
                                 path="/cloud" 
-                                element={<GalleryPage />} 
+                                element={
+                                    <GalleryPage 
+                                        onImageClick={({ src }) => this.setState({ selectedImage: src })}
+                                        />
+                                } 
                                 />
                             <Route 
                                 exact
                                 path="/local" 
-                                element={<GalleryPage />} 
+                                element={
+                                    <GalleryPage 
+                                        onImageClick={({ src }) => this.setState({ selectedImage: src })}
+                                        />
+                                } 
                                 />
                             <Route 
                                 exact
@@ -201,79 +209,83 @@ export class App extends React.Component {
                                 />
                     </Routes>
                 </div>
-            </BrowserRouter>
 
-                <div className="photo">
-                    <div>
-                        <div className="flex flex-row items-center pl-4 pt-3 pb-2">
-                            <button 
-                                onClick={() => this.setState({ sidebarOpen: !this.state.sidebarOpen })}
-                                >
-                                <i className="fa-solid fa-close"></i>
-                            </button>
-
-                            <NavLink 
-                                className="ml-auto mr-1"
-                                to="/search"
-                                onClick={event => this.notImplemented(event)}
-                                >
-                                <div className="flex flex-row items-center text-gray-700">
-                                    <i className="w-6 text-center fa-solid fa-share-nodes"></i>
-                                    <div className="hidden sm:block ml-2">Share</div>
-                                </div>
-                            </NavLink>
-
-                            <NavLink 
-                                className="mr-1"
-                                to="/cloud"
-                                >
-                                <div className="flex flex-row items-center text-gray-700">
-                                    <i className="w-6 text-center fa-regular fa-star"></i>
-                                    <div className="hidden sm:block ml-2">Favorite</div>
-                                </div>
-                            </NavLink>
-
-                            <NavLink 
-                                className="mr-1"
-                                to="/local"
-                                >
-                                <div className="flex flex-row items-center text-gray-700">
-                                    <i className="w-6 text-center fa-solid fa-circle-info"></i>
-                                    <div className="hidden sm:block ml-2">Info</div>
-                                </div>
-                            </NavLink>
-
-                            <NavLink
-                                className="mr-1"
-                                to="/trash"
-                                onClick={event => this.notImplemented(event)}
-                                >
-                                <div className="flex flex-row items-center text-gray-700">
-                                    <i className="w-6 text-center fa-regular fa-trash-can"></i>
-                                    <div className="hidden sm:block ml-2">Trash</div>
-                                </div>
-                            </NavLink>
-
-                            <NavLink
-                                className="mr-2"
-                                to="/menu"
-                                onClick={event => this.notImplemented(event)}
-                                >
-                                <div className="flex flex-row items-center text-gray-700">
-                                    <i className="w-6 text-center fa-solid fa-ellipsis-vertical"></i>
-                                    <div className="hidden sm:block ml-2">More</div>
-                                </div>
-                            </NavLink>
+                {this.state.selectedImage
+                    && <div className="photo">
+                        <div className="photo-content flex flex-col justify-center items-center overflow-hidden pointer-events-none">
+                            <img 
+                                src={this.state.selectedImage}
+                                />
                         </div>
-                    </div>
 
-                    <div className="photo-content flex flex-col justify-center">
-                        <img 
-                            src="https://images.unsplash.com/photo-1654523500036-cebb9e4b75e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNDkzOTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTg3MjgxNDE&ixlib=rb-1.2.1&q=80&w=200" 
-                            />
-                    </div>
+                        <div className="photo-header">
+                            <div className="flex flex-row items-center pl-3 pt-3 pb-2">
+                                <button 
+                                    className="p-1 px-3"
+                                    onClick={() => { 
+                                        this.setState({ selectedImage: undefined });
+                                    }}
+                                    >
+                                    <i className="fa-solid fa-close"></i>
+                                </button>
 
-                </div>
+                                <NavLink 
+                                    className="ml-auto mr-1"
+                                    to="/search"
+                                    onClick={event => this.notImplemented(event)}
+                                    >
+                                    <div className="flex flex-row items-center text-gray-700">
+                                        <i className="w-6 text-center fa-solid fa-share-nodes"></i>
+                                        <div className="hidden sm:block ml-2">Share</div>
+                                    </div>
+                                </NavLink>
+
+                                <NavLink 
+                                    className="mr-1"
+                                    to="/cloud"
+                                    >
+                                    <div className="flex flex-row items-center text-gray-700">
+                                        <i className="w-6 text-center fa-regular fa-star"></i>
+                                        <div className="hidden sm:block ml-2">Favorite</div>
+                                    </div>
+                                </NavLink>
+
+                                <NavLink 
+                                    className="mr-1"
+                                    to="/local"
+                                    >
+                                    <div className="flex flex-row items-center text-gray-700">
+                                        <i className="w-6 text-center fa-solid fa-circle-info"></i>
+                                        <div className="hidden sm:block ml-2">Info</div>
+                                    </div>
+                                </NavLink>
+
+                                <NavLink
+                                    className="mr-1"
+                                    to="/trash"
+                                    onClick={event => this.notImplemented(event)}
+                                    >
+                                    <div className="flex flex-row items-center text-gray-700">
+                                        <i className="w-6 text-center fa-regular fa-trash-can"></i>
+                                        <div className="hidden sm:block ml-2">Trash</div>
+                                    </div>
+                                </NavLink>
+
+                                <NavLink
+                                    className="mr-2"
+                                    to="/menu"
+                                    onClick={event => this.notImplemented(event)}
+                                    >
+                                    <div className="flex flex-row items-center text-gray-700">
+                                        <i className="w-6 text-center fa-solid fa-ellipsis-vertical"></i>
+                                        <div className="hidden sm:block ml-2">More</div>
+                                    </div>
+                                </NavLink>
+                            </div>
+                        </div>
+                   </div>
+                }
+            </HashRouter>
         );
     }
 }

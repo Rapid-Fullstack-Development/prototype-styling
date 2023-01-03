@@ -99,8 +99,7 @@ body {
 /* Fullscreen photo */
 
 .photo {
-    /* display: none; */
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -109,10 +108,37 @@ body {
     z-index: 2000;
 }
 
-.photo-content {
+.photo-header {
     position: absolute;
     top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: white;
+}
+
+.photo-content {
+    position: absolute;
+    top: 50px;
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.photo-content img {
+    flex-shrink: 0;
+}
+
+@media (orientation: portrait) {
+    .photo-content img {
+        min-width: 100%;
+        height: auto;
+    }
+}
+
+@media (orientation: landscape) {
+    .photo-content img {
+        width: auto;
+        min-height: 100%;
+    }
 }

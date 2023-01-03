@@ -8,6 +8,7 @@ export class GalleryPage extends React.Component {
         return (
             <Gallery 
                 items={gallery}
+                onImageClick={this.props.onImageClick}
                 />
         );
     }

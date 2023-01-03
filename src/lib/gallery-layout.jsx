@@ -3,7 +3,13 @@ import { createLayout } from "./create-layout";
 //
 // Responsible for row-based gallery layout.
 //
-export function GalleryLayout({ items = [], galleryWidth = 600, targetRowHeight = 200, baseUrl = "" }) {
+export function GalleryLayout({ 
+    items = [], 
+    galleryWidth = 600, 
+    targetRowHeight = 200, 
+    baseUrl = "",
+    onImageClick = undefined
+    }) {
 
     const gutter = 8; // Small gutter to make sure the edge or each rows is not visible.
     const rows = createLayout(items, galleryWidth + gutter, targetRowHeight);
@@ -28,6 +34,11 @@ export function GalleryLayout({ items = [], galleryWidth = 600, targetRowHeight 
                         {row.items.map(item => {
                             return (
                                 <img 
+                                    onClick={() => {
+                                        if (onImageClick) {
+                                            onImageClick({ src: item.thumb }) 
+                                        }
+                                    }}
                                     key={item.thumb}
                                     src={`${baseUrl}${item.thumb}`}
                                     />

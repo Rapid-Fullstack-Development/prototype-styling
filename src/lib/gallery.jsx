@@ -45,6 +45,7 @@ export class Gallery extends React.Component {
                     targetRowHeight={this.props.targetRowHeight}
                     items={this.props.items}
                     baseUrl={this.props.baseUrl}
+                    onImageClick={this.props.onImageClick}
                     />
             </div>
         );
