@@ -14,8 +14,11 @@ export class App extends React.Component {
         };
     }
 
-    notImplemented() {
+    notImplemented(event) {
         alert("This is a non-function mockup and none of these features are implemented. See the 'Learn more' page for information.");
+
+        event.preventDefault();
+        event.stopPropagation();
     }
 
     render() {
@@ -33,6 +36,17 @@ export class App extends React.Component {
 
                         <NavLink 
                             className="ml-auto mr-1"
+                            to="/search"
+                            onClick={event => this.notImplemented(event)}
+                            >
+                            <div className="flex flex-row items-center text-gray-700">
+                                <i className="w-6 text-center fa-solid fa-search"></i>
+                                <div className="hidden sm:block ml-2">Search</div>
+                            </div>
+                        </NavLink>
+
+                        <NavLink 
+                            className="mr-1"
                             to="/cloud"
                             >
                             <div className="flex flex-row items-center text-gray-700">
@@ -87,8 +101,18 @@ export class App extends React.Component {
                         </button>
                     </div>
 
-                    <NavLink to="/cloud">
+                    <NavLink 
+                        to="/search" 
+                        onClick={event => this.notImplemented(event)}
+                        >
                         <div className="flex flex-row items-center pl-1 text-gray-700">
+                            <i className="w-12 text-center fa-solid fa-search"></i>
+                            <div className="">Search</div>
+                        </div>
+                    </NavLink>
+
+                    <NavLink to="/cloud">
+                        <div className="flex flex-row items-center pl-1 mt-2 text-gray-700">
                             <i className="w-12 text-center fa-solid fa-cloud"></i>
                             <div className="">Cloud</div>
                         </div>
@@ -110,7 +134,7 @@ export class App extends React.Component {
 
                     <button 
                         className="flex flex-row items-center pl-1 mt-8 text-gray-700 cursor-pointer"
-                        onClick={this.notImplemented}
+                        onClick={event => this.notImplemented(event)}
                         >
                         <i className="w-12 text-center fa-regular fa-star"></i>
                         <div className="">Favorites</div>
@@ -118,7 +142,7 @@ export class App extends React.Component {
 
                     <button 
                         className="flex flex-row items-center pl-1 mt-2 text-gray-700 cursor-pointer"
-                        onClick={this.notImplemented}
+                        onClick={event => this.notImplemented(event)}
                         >
                         <i className="w-12 text-center fa-regular fa-images"></i>
                         <div className="">Collections</div>
@@ -126,7 +150,7 @@ export class App extends React.Component {
 
                     <button 
                         className="flex flex-row items-center pl-1 mt-2 text-gray-700 cursor-pointer"
-                        onClick={this.notImplemented}
+                        onClick={event => this.notImplemented(event)}
                         >
                         <i className="w-12 text-center fa-regular fa-trash-can"></i>
                         <div className="">Deleted</div>
