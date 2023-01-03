@@ -2,6 +2,8 @@
 
 A prototype for the user interface and styling of [the Photosphere frontend](https://rapidfullstackdevelopment.com/example-application).
 
+[See the live demo](https://rapid-fullstack-development.github.io/prototype-styling/)
+
 Built on [React](https://reactjs.org/) and bundled with [Parcel](https://parceljs.org/).
 
 This code accompanies chapter 4 of the book [Rapid Fullstack Development](https://rapidfullstackdevelopment.com/).
