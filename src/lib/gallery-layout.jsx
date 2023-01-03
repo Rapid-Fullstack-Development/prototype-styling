@@ -5,12 +5,14 @@ import { createLayout } from "./create-layout";
 //
 export function GalleryLayout({ items = [], galleryWidth = 600, targetRowHeight = 200, baseUrl = "" }) {
 
-    const rows = createLayout(items, galleryWidth, targetRowHeight);
+    const gutter = 8; // Small gutter to make sure the edge or each rows is not visible.
+    const rows = createLayout(items, galleryWidth + gutter, targetRowHeight);
 
     return (
         <div
             style={{
                 width: `${galleryWidth}px`,
+                overflowX: "hidden",
             }}
             >
             {rows.map((row, rowIndex) => {

@@ -32,9 +32,8 @@ export class Gallery extends React.Component {
     }
 
     onResize = () => {
-        const gutter = 8; // Small gutter to make sure the edge or each rows is not visible.
         this.setState({
-            galleryWidth: this.containerRef.current.clientWidth + gutter,
+            galleryWidth: this.containerRef.current.clientWidth,
         });
     }
 
@@ -44,7 +43,7 @@ export class Gallery extends React.Component {
                 <GalleryLayout
                     galleryWidth={this.state.galleryWidth}
                     targetRowHeight={this.props.targetRowHeight}
-                    items={this.props.items}                
+                    items={this.props.items}
                     baseUrl={this.props.baseUrl}
                     />
             </div>
