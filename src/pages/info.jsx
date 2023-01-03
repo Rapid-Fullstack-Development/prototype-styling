@@ -18,6 +18,12 @@ export class InfoPage extends React.Component {
                     <p className="mt-4">
                         The purpose of this prototype is to figure out what the user interface for Photosphere might look like and to answer questions that will drive the development process.
                     </p>
+
+                    <p className="mt-4">
+                        <a target="_blank" href="https://github.com/Rapid-Fullstack-Development/prototype-styling">
+                            The code for this prototype is available on GitHub.
+                        </a>
+                    </p>
                 </div>
             </div>
         );
