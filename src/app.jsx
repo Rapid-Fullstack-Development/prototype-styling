@@ -22,7 +22,7 @@ export class App extends React.Component {
         return (
             <BrowserRouter>
                 <div id="navbar">
-                    <div className="flex flex-row items-center pl-2 pt-2 pb-2">
+                    <div className="flex flex-row items-center pl-2 pt-3 pb-2">
                         <button 
                             onClick={() => this.setState({ sidebarOpen: !this.state.sidebarOpen })}
                             >
@@ -52,7 +52,7 @@ export class App extends React.Component {
                         </NavLink>
 
                         <NavLink
-                            className="mr-8"
+                            className="mr-2"
                             to="/upload"
                             >
                             <div className="flex flex-row items-center text-gray-700">
