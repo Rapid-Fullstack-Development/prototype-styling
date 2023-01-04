@@ -290,7 +290,6 @@ export class App extends React.Component {
                 </div>
 
                 <div className={"info " + (this.state.openInfo ? "open" : "")}>
-                    {/* <div className="info open"> */}
                     <div className="info-content">
                         <div
                             className="info-photo-box flex flex-row justify-center flex-grow"
