@@ -289,12 +289,6 @@ export class App extends React.Component {
                     </div>
                 </div>
 
-                {/* todo 
-                - labels
-                - add / remove label
-               
-                */}
-
                 <div className={"info " + (this.state.openInfo ? "open" : "")}>
                     {/* <div className="info open"> */}
                     <div className="info-content">
