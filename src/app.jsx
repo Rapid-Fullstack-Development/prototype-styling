@@ -165,49 +165,51 @@ export class App extends React.Component {
 
                 </div>
 
-                <div id="content" className={this.state.sidebarOpen ? "open" : ""} >
-                    <Routes>
-                        <Route
-                            exact
-                            path="/cloud"
-                            element={
-                                <GalleryPage
-                                    onImageClick={({ src }) => this.setState({ selectedImage: src })}
-                                />
-                            }
-                        />
-                        <Route
-                            exact
-                            path="/local"
-                            element={
-                                <GalleryPage
-                                    onImageClick={({ src }) => this.setState({ selectedImage: src })}
-                                />
-                            }
-                        />
-                        <Route
-                            exact
-                            path="/upload"
-                            element={<UploadPage />}
-                        />
+                <div id="main">
+                    <div id="content" className={this.state.sidebarOpen ? "open" : ""} >
+                        <Routes>
+                            <Route
+                                exact
+                                path="/cloud"
+                                element={
+                                    <GalleryPage
+                                        onImageClick={({ src }) => this.setState({ selectedImage: src })}
+                                    />
+                                }
+                            />
+                            <Route
+                                exact
+                                path="/local"
+                                element={
+                                    <GalleryPage
+                                        onImageClick={({ src }) => this.setState({ selectedImage: src })}
+                                    />
+                                }
+                            />
+                            <Route
+                                exact
+                                path="/upload"
+                                element={<UploadPage />}
+                            />
 
-                        <Route
-                            exact
-                            path="/info"
-                            element={<InfoPage />}
-                        />
+                            <Route
+                                exact
+                                path="/info"
+                                element={<InfoPage />}
+                            />
 
-                        <Route
-                            exact
-                            path="/"
-                            element={
-                                <Navigate
-                                    replace
-                                    to="/cloud"
-                                />
-                            }
-                        />
-                    </Routes>
+                            <Route
+                                exact
+                                path="/"
+                                element={
+                                    <Navigate
+                                        replace
+                                        to="/cloud"
+                                    />
+                                }
+                            />
+                        </Routes>
+                    </div>
                 </div>
 
                 <div className={"photo " + (this.state.selectedImage ? "open" : "")}>

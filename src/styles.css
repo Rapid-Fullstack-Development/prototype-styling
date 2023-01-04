@@ -1,9 +1,24 @@
 body {
-    /* Prevent horizontal scrolling of the photo gallery. */
-    overflow-x: hidden;
+    overflow: hidden;
     font-family: 'Roboto', Arial, sans-serif;
     color: rgb(60,64,67);
     background-color: #F3F4F6;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+}
+
+#main {
+    width: 100vw;
+    height: calc(100vh - 51px);
+    overflow-y: scroll;
 }
 
 /* Menu */
@@ -66,8 +81,8 @@ body {
     border-bottom: 1px solid rgb(218, 220, 224);
 }
 
-#content {
-    padding-top: 52px;
+#main {
+    margin-top: 51px;
 }
 
 /* Drag and drop */
