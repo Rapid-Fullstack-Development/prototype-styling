@@ -6,7 +6,7 @@ import { createLayout } from "./create-layout";
 export function GalleryLayout({ 
     items = [], 
     galleryWidth = 600, 
-    targetRowHeight = 200, 
+    targetRowHeight = 150, 
     baseUrl = "",
     onImageClick = undefined
     }) {
