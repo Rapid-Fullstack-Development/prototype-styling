@@ -173,7 +173,7 @@ export class App extends React.Component {
                                 path="/cloud"
                                 element={
                                     <GalleryPage
-                                        onImageClick={({ src }) => this.setState({ selectedImage: src })}
+                                        onImageClick={image => this.setState({ selectedImage: image })}
                                     />
                                 }
                             />
@@ -182,7 +182,7 @@ export class App extends React.Component {
                                 path="/local"
                                 element={
                                     <GalleryPage
-                                        onImageClick={({ src }) => this.setState({ selectedImage: src })}
+                                        onImageClick={image => this.setState({ selectedImage: image })}
                                     />
                                 }
                             />
@@ -212,13 +212,7 @@ export class App extends React.Component {
                     </div>
                 </div>
 
-                <div className={"photo " + (this.state.selectedImage ? "open" : "")}>
-                    <div className="photo-content flex flex-col justify-center items-center overflow-hidden pointer-events-none">
-                        <img
-                            src={this.state.selectedImage}
-                        />
-                    </div>
-
+                <div className={"photo flex flex-col " + (this.state.selectedImage ? "open" : "")}>
                     <div className="photo-header">
                         <div className="flex flex-row items-center pl-3 pt-3 pb-2">
                             <button
@@ -289,6 +283,14 @@ export class App extends React.Component {
                             </NavLink>
                         </div>
                     </div>
+
+                    <div className="photo-content flex-grow flex portrait:flex-col landscape:flex-row justify-center">
+                        {this.state.selectedImage && 
+                            <img
+                                src={this.state.selectedImage.thumb}
+                            />
+                        }
+                    </div>
                 </div>
 
                 <div className={"info " + (this.state.openInfo ? "open" : "")}>
@@ -296,14 +298,16 @@ export class App extends React.Component {
                         <div
                             className="info-photo-box flex flex-row justify-center flex-grow"
                             >
-                            <img
-                                style={{
-                                    height: "100%",
-                                    width: "auto",
-                                    objectFit: "contain",
-                                }}
-                                src={this.state.selectedImage}
-                            />
+                            {(this.state.selectedImage && this.state.openInfo)
+                                && <img
+                                    style={{
+                                        height: "100%",
+                                        width: "auto",
+                                        objectFit: "contain",
+                                    }}
+                                    src={this.state.selectedImage.thumb}
+                                />
+                            }
                         </div>
 
                         <div className="flex flex-col portrait:pl-3 landscape:mt-4">

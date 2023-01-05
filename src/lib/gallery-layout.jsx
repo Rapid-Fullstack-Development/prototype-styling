@@ -36,7 +36,7 @@ export function GalleryLayout({
                                 <img 
                                     onClick={() => {
                                         if (onImageClick) {
-                                            onImageClick({ src: item.thumb }) 
+                                            onImageClick(item) 
                                         }
                                     }}
                                     key={item.thumb}

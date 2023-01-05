@@ -134,33 +134,7 @@ body {
     left: 0;
     right: 0;
     height: 50px;
-    background-color: white;
-}
-
-.photo-content {
-    position: absolute;
-    top: 50px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-.photo-content img {
-    flex-shrink: 0;
-}
-
-@media (orientation: portrait) {
-    .photo-content img {
-        min-width: 100%;
-        height: auto;
-    }
-}
-
-@media (orientation: landscape) {
-    .photo-content img {
-        width: auto;
-        min-height: 100%;
-    }
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Photo info */
