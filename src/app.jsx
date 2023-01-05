@@ -218,7 +218,7 @@ export class App extends React.Component {
                             <button
                                 className="p-1 px-3"
                                 onClick={() => {
-                                    this.setState({ selectedImage: undefined });
+                                    this.setState({ selectedImage: undefined, openInfo: false });
                                 }}
                             >
                                 <i className="fa-solid fa-close"></i>
