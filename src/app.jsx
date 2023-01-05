@@ -35,32 +35,32 @@ export class App extends React.Component {
                         <h1 className="text-xl ml-2">Photosphere</h1>
 
                         <NavLink
-                            className="ml-auto mr-1"
+                            className="ml-auto mr-2"
                             to="/search"
                             onClick={event => this.notImplemented(event)}
-                        >
+                            >
                             <div className="flex flex-row items-center text-gray-700">
-                                <i className="w-6 text-center fa-solid fa-search"></i>
+                                <i className="w-4 text-center fa-solid fa-search"></i>
                                 <div className="hidden sm:block ml-2">Search</div>
                             </div>
                         </NavLink>
 
                         <NavLink
-                            className="mr-1"
+                            className="mr-2"
                             to="/cloud"
-                        >
+                            >
                             <div className="flex flex-row items-center text-gray-700">
-                                <i className="w-6 text-center fa-solid fa-cloud"></i>
+                                <i className="w-4 text-center fa-solid fa-cloud"></i>
                                 <div className="hidden sm:block ml-2">Cloud</div>
                             </div>
                         </NavLink>
 
                         <NavLink
-                            className="mr-1"
+                            className="mr-2"
                             to="/local"
-                        >
+                            >
                             <div className="flex flex-row items-center text-gray-700">
-                                <i className="w-6 text-center fa-solid fa-hard-drive"></i>
+                                <i className="w-4 text-center fa-solid fa-hard-drive"></i>
                                 <div className="hidden sm:block ml-2">Local</div>
                             </div>
                         </NavLink>
@@ -70,7 +70,7 @@ export class App extends React.Component {
                             to="/upload"
                         >
                             <div className="flex flex-row items-center text-gray-700">
-                                <i className="w-6 text-center fa-solid fa-upload"></i>
+                                <i className="w-4 text-center fa-solid fa-upload"></i>
                                 <div className="hidden sm:block ml-2">Upload</div>
                             </div>
                         </NavLink>
@@ -80,7 +80,7 @@ export class App extends React.Component {
                             to="/info"
                         >
                             <div className="flex flex-row items-center text-gray-700">
-                                <i className="w-6 text-center fa-solid fa-circle-exclamation"></i>
+                                <i className="w-4 text-center fa-solid fa-circle-exclamation"></i>
                                 <div className="hidden sm:block ml-2">Learn more</div>
                             </div>
                         </NavLink>
@@ -157,7 +157,7 @@ export class App extends React.Component {
                     </button>
 
                     <NavLink to="/info">
-                        <div className="flex flex-row items-center pl-1 mt-12 text-gray-700">
+                        <div className="flex flex-row items-center pl-1 mt-8 text-gray-700">
                             <i className="w-12 text-center fa-solid fa-circle-exclamation"></i>
                             <div className="">Learn more</div>
                         </div>
@@ -225,28 +225,28 @@ export class App extends React.Component {
                             </button>
 
                             <NavLink
-                                className="ml-auto mr-1"
+                                className="ml-auto mr-4"
                                 to="/search"
                                 onClick={event => this.notImplemented(event)}
                             >
                                 <div className="flex flex-row items-center text-gray-700">
-                                    <i className="w-6 text-center fa-solid fa-share-nodes"></i>
+                                    <i className="w-4 text-center fa-solid fa-share-nodes"></i>
                                     <div className="hidden sm:block ml-2">Share</div>
                                 </div>
                             </NavLink>
 
                             <NavLink
-                                className="mr-1"
+                                className="mr-4"
                                 to="/cloud"
                             >
                                 <div className="flex flex-row items-center text-gray-700">
-                                    <i className="w-6 text-center fa-regular fa-star"></i>
+                                    <i className="w-4 text-center fa-regular fa-star"></i>
                                     <div className="hidden sm:block ml-2">Favorite</div>
                                 </div>
                             </NavLink>
 
                             <NavLink
-                                className="mr-1"
+                                className="mr-4"
                                 to="/local"
                                 onClick={event => {
                                     this.setState({ openInfo: true });
@@ -255,29 +255,29 @@ export class App extends React.Component {
                                 }}
                             >
                                 <div className="flex flex-row items-center text-gray-700">
-                                    <i className="w-6 text-center fa-solid fa-circle-info"></i>
+                                    <i className="w-4 text-center fa-solid fa-circle-info"></i>
                                     <div className="hidden sm:block ml-2">Info</div>
                                 </div>
                             </NavLink>
 
                             <NavLink
-                                className="mr-1"
+                                className="mr-4"
                                 to="/trash"
                                 onClick={event => this.notImplemented(event)}
                             >
                                 <div className="flex flex-row items-center text-gray-700">
-                                    <i className="w-6 text-center fa-regular fa-trash-can"></i>
+                                    <i className="w-3 text-center fa-regular fa-trash-can"></i>
                                     <div className="hidden sm:block ml-2">Trash</div>
                                 </div>
                             </NavLink>
 
                             <NavLink
-                                className="mr-2"
+                                className="mr-3"
                                 to="/menu"
                                 onClick={event => this.notImplemented(event)}
                             >
                                 <div className="flex flex-row items-center text-gray-700">
-                                    <i className="w-6 text-center fa-solid fa-ellipsis-vertical"></i>
+                                    <i className="w-2 text-center fa-solid fa-ellipsis-vertical"></i>
                                     <div className="hidden sm:block ml-2">More</div>
                                 </div>
                             </NavLink>
