@@ -194,14 +194,14 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
-    z-index: 3000;
+    /* z-index: 3000; */
     background: transparent;
     pointer-events: none;
 }
 
 #explainer-text {
     position: absolute;
-    top: 70%;
+    top: 50%;
     left: 25%;
     right: 25%;
     border: 2px solid #ccc;
