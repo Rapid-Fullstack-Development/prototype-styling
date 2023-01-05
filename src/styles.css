@@ -186,3 +186,28 @@ body {
     margin-top: 50px;
 }
 
+/* Explainer */
+
+#explainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3000;
+    background: transparent;
+    pointer-events: none;
+}
+
+#explainer-text {
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    right: 25%;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    max-width: 480px;
+    margin: 100px auto;
+    padding: 10px;
+    background-color: white;
+}

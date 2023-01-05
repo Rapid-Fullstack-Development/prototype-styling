@@ -436,8 +436,44 @@ export class App extends React.Component {
                             </div>
                         </div>
                     </div>
-
                 </div>
+
+                <Routes>
+                    <Route
+                        exact
+                        path="/cloud"
+                        element={
+                            <div id="explainer">
+                                <div id="explainer-text">
+                                    <p>This page shows photos that you have stored in the cloud.</p>
+                                </div>
+                            </div>
+                        }
+                    />
+                    <Route
+                        exact
+                        path="/local"
+                        element={
+                            <div id="explainer">
+                                <div id="explainer-text">
+                                    <p>This page shows photos that you have stored on the local device (desktop/mobile only).</p>
+                                </div>
+                            </div>
+                        }
+                        />
+
+                    <Route
+                        exact
+                        path="/upload"
+                        element={
+                            <div id="explainer">
+                                <div id="explainer-text">
+                                    <p>This page allows photos to be uploaded.</p>
+                                </div>
+                            </div>
+                        }
+                        />
+                </Routes>
             </HashRouter>
         );
     }
