@@ -285,11 +285,27 @@ export class App extends React.Component {
                     </div>
 
                     <div className="photo-content flex-grow flex portrait:flex-col landscape:flex-row justify-center">
+                        <div className="flex flex-col justify-center">
+                            <button
+                                className="p-1 px-3"
+                                onClick={event => this.notImplemented(event)}
+                                >
+                                <i className="fa-solid fa-arrow-left"></i>
+                            </button>
+                        </div>
                         {this.state.selectedImage && 
                             <img
                                 src={this.state.selectedImage.thumb}
                             />
                         }
+                        <div className="flex flex-col justify-center">
+                            <button
+                                className="p-1 px-3"
+                                onClick={event => this.notImplemented(event)}
+                                >
+                                <i className="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
