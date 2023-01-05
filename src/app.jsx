@@ -293,25 +293,26 @@ export class App extends React.Component {
                     </div>
                 </div>
 
-                <div className={"info " + (this.state.openInfo ? "open" : "")}>
-                    <div className="info-content">
-                        <div
-                            className="info-photo-box flex flex-row justify-center flex-grow"
+                <div className={"info overflow-scroll " + (this.state.openInfo ? "open" : "")}>
+                    <div className="info-header">
+                        <div className="flex flex-row items-center pl-3 pt-3 pb-2">
+                            <button
+                                className="p-1 px-3"
+                                onClick={() => {
+                                    this.setState({ openInfo: false });
+                                }}
                             >
-                            {(this.state.selectedImage && this.state.openInfo)
-                                && <img
-                                    style={{
-                                        height: "100%",
-                                        width: "auto",
-                                        objectFit: "contain",
-                                    }}
-                                    src={this.state.selectedImage.thumb}
-                                />
-                            }
-                        </div>
+                                <i className="fa-solid fa-close"></i>
+                            </button>
 
-                        <div className="flex flex-col portrait:pl-3 landscape:mt-4">
-                            <div className="flex flex-row portrait:mt-8 ml-6 h-10">
+                            <h1 className="text-xl ml-2">Info</h1>
+                        </div>
+                    </div>
+
+                    <div className="info-content flex flex-col">
+
+                        <div className="flex flex-col flex-grow ml-5 mr-5 mt-6 mb-6 justify-center">
+                            <div className="flex flex-row h-8">
                                 <textarea
                                     className="flex-grow border-b border-solid border-black border-opacity-20"
                                     placeholder="Add a description"
@@ -323,13 +324,13 @@ export class App extends React.Component {
 
                             <div className="flex flex-col">
                                 <div className="text-lg text-gray-600 flex flex-row portrait:mt-10 landscape:mt-4 pt-2">
-                                    <div className="ml-6 w-6 mt-1 flex flex-col items-center">
+                                    <div className="w-6 mt-2 flex flex-col items-center">
                                         <i className="text-2xl fa-solid fa-tags"></i>
                                     </div>
-                                    <div className="flex flex-col ml-6">
+                                    <div className="flex flex-col ml-3">
                                         <div className="flex flex-row">
                                             <span
-                                                className="flex flex-wrap justify-between items-center text-base bg-gray-100 hover:bg-gray-200 border border-gray-200 border-solid rounded pl-3 pr-1 py-0">
+                                                className="flex flex-wrap justify-between items-center text-sm bg-gray-100 hover:bg-gray-200 border border-gray-200 border-solid rounded pl-1 pr-1 py-0">
                                                 Label 1
                                                 <button
                                                     className="ml-1 p-1 pl-2 pr-1"
@@ -339,10 +340,10 @@ export class App extends React.Component {
                                                 </button>
                                             </span>
                                             <span
-                                                className="ml-2 flex flex-wrap justify-between items-center text-base bg-gray-100 hover:bg-gray-200 border border-gray-200 border-solid rounded pl-3 pr-1 py-0">
+                                                className="ml-2 flex flex-wrap justify-between items-center text-sm bg-gray-100 hover:bg-gray-200 border border-gray-200 border-solid rounded pl-1 pr-1 py-0">
                                                 Label 2
                                                 <button
-                                                    className="ml-1 p-1 pl-2 pr-1"
+                                                    className="ml-2 p-1 pl-2 pr-1"
                                                     onClick={event => this.notImplemented(event)}
                                                     >
                                                     <i className="fa-solid fa-close"></i>
@@ -359,11 +360,11 @@ export class App extends React.Component {
                                     </div>
                                 </div>
 
-                                <div className="text-lg text-gray-600 flex flex-row mt-4 pt-2">
-                                    <div className="ml-6 w-6 mt-1 flex flex-col items-center">
+                                <div className="text-base text-gray-600 flex flex-row mt-4 pt-2">
+                                    <div className="w-6 mt-2 flex flex-col items-center">
                                         <i className="text-2xl fa-solid fa-calendar-day"></i>
                                     </div>
-                                    <div className="flex flex-col ml-6">
+                                    <div className="flex flex-col ml-3">
                                         <div>
                                             Jan 2
                                         </div>
@@ -374,11 +375,11 @@ export class App extends React.Component {
                                     </div>
                                 </div>
 
-                                <div className="text-lg text-gray-600 flex flex-row mt-4 pt-2">
-                                    <div className="ml-6 w-6 mt-1 flex flex-col items-center">
+                                <div className="text-base text-gray-600 flex flex-row mt-4 pt-2">
+                                    <div className="w-6 mt-2 flex flex-col items-center">
                                         <i className="text-2xl fa-solid fa-camera"></i>
                                     </div>
-                                    <div className="flex flex-col ml-6">
+                                    <div className="flex flex-col ml-3">
                                         <div>
                                             Google Pixel 6
                                         </div>
@@ -391,11 +392,11 @@ export class App extends React.Component {
                                     </div>
                                 </div>
 
-                                <div className="text-lg text-gray-600 flex flex-row mt-4 pt-2">
-                                    <div className="ml-6 w-6 mt-1 flex flex-col items-center">
+                                <div className="text-base text-gray-600 flex flex-row mt-4 pt-2">
+                                    <div className="w-6 mt-2 flex flex-col items-center">
                                         <i className="text-2xl fa-regular fa-image"></i>
                                     </div>
-                                    <div className="flex flex-col ml-6">
+                                    <div className="flex flex-col ml-3">
                                         <div>
                                             PXL_20230102_070227920.jpg
                                         </div>
@@ -406,11 +407,11 @@ export class App extends React.Component {
                                     </div>
                                 </div>
 
-                                <div className="text-lg text-gray-600 flex flex-row mt-4 pt-2">
-                                    <div className="ml-6 w-6 mt-0 flex flex-col items-center">
+                                <div className="text-base text-gray-600 flex flex-row mt-4 pt-2">
+                                    <div className="w-6 mt-0 flex flex-col items-center">
                                         <i className="text-2xl fa-solid fa-upload"></i>
                                     </div>
-                                    <div className="flex flex-col ml-6">
+                                    <div className="flex flex-col ml-3">
                                         <div>
                                             Uploaded from Android device
                                         </div>
@@ -420,20 +421,6 @@ export class App extends React.Component {
                         </div>
                     </div>
 
-                    <div className="info-header">
-                        <div className="flex flex-row items-center pl-3 pt-3 pb-2">
-                            <button
-                                className="p-1 px-3"
-                                onClick={() => {
-                                    this.setState({ openInfo: false });
-                                }}
-                            >
-                                <i className="fa-solid fa-close"></i>
-                            </button>
-
-                            <h1 className="text-xl ml-2">Info</h1>
-                        </div>
-                    </div>
                 </div>
             </HashRouter>
         );
