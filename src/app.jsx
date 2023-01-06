@@ -28,22 +28,26 @@ export class App extends React.Component {
                     <div className="flex flex-row items-center pl-2 pt-3 pb-2">
                         <button
                             onClick={() => this.setState({ sidebarOpen: !this.state.sidebarOpen })}
-                        >
+                            >
                             <i className="fa-solid fa-bars"></i>
                         </button>
 
                         <h1 className="text-xl ml-2">Photosphere</h1>
 
-                        <NavLink
+                        <button
                             className="ml-auto mr-2"
                             to="/search"
-                            onClick={event => this.notImplemented(event)}
+                            onClick={event => {
+                                this.setState({
+                                    openSearch: true,
+                                });
+                            }}
                             >
                             <div className="flex flex-row items-center text-gray-700">
                                 <i className="w-4 text-center fa-solid fa-search"></i>
                                 <div className="hidden sm:block ml-2">Search</div>
                             </div>
-                        </NavLink>
+                        </button>
 
                         <NavLink
                             className="mr-2"
@@ -85,6 +89,23 @@ export class App extends React.Component {
                             </div>
                         </NavLink>
                     </div>
+
+                    <div class={"search flex flex-row items-stretch " + (this.state.openSearch ? "open": "")}>
+                        <button
+                            className="w-10 text-xl"
+                            onClick={event => {
+                                this.setState({
+                                    openSearch: false,
+                                });
+                            }}
+                            >
+                            <i className="fa-solid fa-close"></i>
+                        </button>
+                        <input 
+                            className="search-input flex-grow"
+                            placeholder="Enter your search and press enter"
+                            />
+                    </div>
                 </div>
 
                 <div id="sidebar" className={this.state.sidebarOpen ? "open" : ""} >
@@ -101,18 +122,21 @@ export class App extends React.Component {
                         </button>
                     </div>
 
-                    <NavLink
-                        to="/search"
-                        onClick={event => this.notImplemented(event)}
-                    >
+                    <button
+                        onClick={event => {
+                            this.setState({
+                                openSearch: true,
+                            });
+                        }}
+                        >
                         <div className="flex flex-row items-center pl-1 text-gray-700">
                             <i className="w-12 text-center fa-solid fa-search"></i>
                             <div className="">Search</div>
                         </div>
-                    </NavLink>
+                    </button>
 
                     <NavLink to="/cloud">
-                        <div className="flex flex-row items-center pl-1 mt-2 text-gray-700">
+                        <div className="flex flex-row items-center pl-1 mt-8 text-gray-700">
                             <i className="w-12 text-center fa-solid fa-cloud"></i>
                             <div className="">Cloud</div>
                         </div>
@@ -135,7 +159,7 @@ export class App extends React.Component {
                     <button
                         className="flex flex-row items-center pl-1 mt-8 text-gray-700 cursor-pointer"
                         onClick={event => this.notImplemented(event)}
-                    >
+                        >
                         <i className="w-12 text-center fa-regular fa-star"></i>
                         <div className="">Favorites</div>
                     </button>
@@ -143,7 +167,7 @@ export class App extends React.Component {
                     <button
                         className="flex flex-row items-center pl-1 mt-2 text-gray-700 cursor-pointer"
                         onClick={event => this.notImplemented(event)}
-                    >
+                        >
                         <i className="w-12 text-center fa-regular fa-images"></i>
                         <div className="">Collections</div>
                     </button>
@@ -151,7 +175,7 @@ export class App extends React.Component {
                     <button
                         className="flex flex-row items-center pl-1 mt-2 text-gray-700 cursor-pointer"
                         onClick={event => this.notImplemented(event)}
-                    >
+                        >
                         <i className="w-12 text-center fa-regular fa-trash-can"></i>
                         <div className="">Trash</div>
                     </button>
@@ -220,7 +244,7 @@ export class App extends React.Component {
                                 onClick={() => {
                                     this.setState({ selectedImage: undefined, openInfo: false });
                                 }}
-                            >
+                                >
                                 <i className="fa-solid fa-close"></i>
                             </button>
 
@@ -228,7 +252,7 @@ export class App extends React.Component {
                                 className="ml-auto mr-4"
                                 to="/search"
                                 onClick={event => this.notImplemented(event)}
-                            >
+                                >
                                 <div className="flex flex-row items-center text-gray-700">
                                     <i className="w-4 text-center fa-solid fa-share-nodes"></i>
                                     <div className="hidden sm:block ml-2">Share</div>
