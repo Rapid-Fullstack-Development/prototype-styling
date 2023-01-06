@@ -11,7 +11,7 @@ export function createLayout(items, galleryWidth, targetRowHeight) {
     const rows = [];
 
     let curRow = {
-        items: [],       
+        items: [],
         height: targetRowHeight,
         width: 0,
     };
@@ -25,13 +25,33 @@ export function createLayout(items, galleryWidth, targetRowHeight) {
 
         if (curRow.items.length > 0) {
             if (curRow.width + computedWidth > galleryWidth) {
+                //
+                // Break row on width.
+                //
                 curRow = {
                     items: [],
                     height: targetRowHeight,
                     width: 0,
+                    group: item.group,
                 };
-                rows.push(curRow);                
+                rows.push(curRow);
             }
+
+            if (curRow.group !== item.group) {
+                //
+                // Break row on group.
+                //
+                curRow = { //TODO: This should be optional.
+                    items: [],
+                    height: targetRowHeight,
+                    width: 0,
+                    group: item.group,
+                };
+                rows.push(curRow);
+            }
+        }
+        else {
+            curRow.group = item.group;
         }
 
         //
@@ -54,7 +74,13 @@ export function createLayout(items, galleryWidth, targetRowHeight) {
     // For all rows, except the last row, stretch the items towards the right hand boundary.
     //
     for (let rowIndex = 0; rowIndex < rows.length-1; rowIndex++) {
+
         const row = rows[rowIndex];
+        const nextRow = rows[rowIndex+1];
+        if (row.group !== nextRow.group) {
+            //TODO: This should be optional.
+            continue; // Don't expand the last row in each group.
+        }
 
         let rowWidth = row.width;
         

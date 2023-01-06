@@ -14,6 +14,8 @@ export function GalleryLayout({
     const gutter = 8; // Small gutter to make sure the edge or each rows is not visible.
     const rows = createLayout(items, galleryWidth + gutter, targetRowHeight);
 
+    let prevGroup = undefined;
+
     return (
         <div
             style={{
@@ -22,7 +24,26 @@ export function GalleryLayout({
             }}
             >
             {rows.map((row, rowIndex) => {
-                return (
+                const items = [];
+                if (row.group !== prevGroup) {
+                    items.push(
+                        <div 
+                            key={row.group}
+                            style={{
+                                fontSize: "0.9rem",
+                                color: "rgb(60,64,67)",
+                                fontWeight: 500,
+                                lineHeight: "1.25rem",
+                                letterSpacing: ".0178571429em",
+                                padding: "1.25em",
+                            }}
+                            >
+                            {row.group}
+                        </div>
+                    );
+                    prevGroup = row.group;
+                }
+                items.push(
                     <div
                         key={rowIndex}
                         style={{
@@ -34,6 +55,9 @@ export function GalleryLayout({
                         {row.items.map(item => {
                             return (
                                 <img 
+                                    style={{
+                                        padding: "1px",
+                                    }}
                                     onClick={() => {
                                         if (onImageClick) {
                                             onImageClick(item) 
@@ -46,6 +70,7 @@ export function GalleryLayout({
                         })}
                     </div>
                 );
+                return items;
             })}
 
         </div>

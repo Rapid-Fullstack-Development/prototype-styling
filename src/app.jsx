@@ -90,7 +90,7 @@ export class App extends React.Component {
                         </NavLink>
                     </div>
 
-                    <div class={"search flex flex-row items-stretch " + (this.state.openSearch ? "open": "")}>
+                    <div className={"search flex flex-row items-stretch " + (this.state.openSearch ? "open": "")}>
                         <button
                             className="w-10 text-xl"
                             onClick={event => {
