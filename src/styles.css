@@ -2,6 +2,10 @@ body {
     overflow: hidden;
     font-family: 'Roboto', Arial, sans-serif;
     color: rgb(60,64,67);
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    letter-spacing: 0;
+    font-weight: 400;
     background-color: #F3F4F6;
     position: absolute;
     top: 0;
@@ -21,6 +25,12 @@ body {
     overflow-y: scroll;
 }
 
+/* Icons */
+
+i {
+    color: #777777;
+}
+
 /* Menu */
 
 #navbar a {
@@ -30,11 +40,11 @@ body {
 }
 
 #navbar .active {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #CCCCCC;
 }
 
 #sidebar .active>div>div {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #CCCCCC;
 }
 
 /* Sidebar */
@@ -201,15 +211,13 @@ body {
 
 #explainer-text {
     position: absolute;
-    top: 50%;
-    left: 25%;
-    right: 25%;
-    border: 2px solid #ccc;
+    right: 40px;
+    bottom: 10px;
+    border: 2px solid #eee;
     border-radius: 20px;
     max-width: 480px;
-    margin: 100px auto;
     padding: 10px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* Search input */

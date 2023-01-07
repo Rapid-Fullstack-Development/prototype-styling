@@ -25,17 +25,17 @@ export class App extends React.Component {
         return (
             <HashRouter>
                 <div id="navbar">
-                    <div className="flex flex-row items-center pl-2 pt-3 pb-2">
+                    <div className="flex flex-row items-center pl-6 pt-3 pb-2">
                         <button
                             onClick={() => this.setState({ sidebarOpen: !this.state.sidebarOpen })}
                             >
                             <i className="fa-solid fa-bars"></i>
                         </button>
 
-                        <h1 className="text-xl ml-2">Photosphere</h1>
+                        <h1 className="ml-10">Photosphere</h1>
 
                         <button
-                            className="ml-auto mr-2"
+                            className="ml-auto mr-3"
                             to="/search"
                             onClick={event => {
                                 this.setState({
@@ -43,48 +43,48 @@ export class App extends React.Component {
                                 });
                             }}
                             >
-                            <div className="flex flex-row items-center text-gray-700">
-                                <i className="w-4 text-center fa-solid fa-search"></i>
+                            <div className="flex flex-row items-center">
+                                <i className="w-5 text-center fa-solid fa-search"></i>
                                 <div className="hidden sm:block ml-2">Search</div>
                             </div>
                         </button>
 
                         <NavLink
-                            className="mr-2"
+                            className="mr-3"
                             to="/cloud"
                             >
-                            <div className="flex flex-row items-center text-gray-700">
-                                <i className="w-4 text-center fa-solid fa-cloud"></i>
+                            <div className="flex flex-row items-center">
+                                <i className="w-5 text-center fa-solid fa-cloud"></i>
                                 <div className="hidden sm:block ml-2">Cloud</div>
                             </div>
                         </NavLink>
 
                         <NavLink
-                            className="mr-2"
+                            className="mr-3"
                             to="/local"
                             >
-                            <div className="flex flex-row items-center text-gray-700">
-                                <i className="w-4 text-center fa-solid fa-hard-drive"></i>
+                            <div className="flex flex-row items-center`">
+                                <i className="w-5 text-center fa-solid fa-hard-drive"></i>
                                 <div className="hidden sm:block ml-2">Local</div>
                             </div>
                         </NavLink>
 
                         <NavLink
-                            className="mr-2"
+                            className="mr-3"
                             to="/upload"
                         >
-                            <div className="flex flex-row items-center text-gray-700">
-                                <i className="w-4 text-center fa-solid fa-upload"></i>
+                            <div className="flex flex-row items-center">
+                                <i className="w-5 text-center fa-solid fa-upload"></i>
                                 <div className="hidden sm:block ml-2">Upload</div>
                             </div>
                         </NavLink>
 
                         <NavLink
-                            className="mr-2"
+                            className="mr-3"
                             to="/info"
                         >
-                            <div className="flex flex-row items-center text-gray-700">
-                                <i className="w-4 text-center fa-solid fa-circle-exclamation"></i>
+                            <div className="flex flex-row items-center">
+                                <i className="w-5 text-center fa-solid fa-circle-exclamation"></i>
                                 <div className="hidden sm:block ml-2">Learn more</div>
                             </div>
                         </NavLink>
@@ -103,7 +103,7 @@ export class App extends React.Component {
                         </button>
                         <input 
                             className="search-input flex-grow"
-                            placeholder="Enter your search and press enter"
+                            placeholder="Type your search and press enter"
                             />
                     </div>
                 </div>
@@ -129,35 +129,35 @@ export class App extends React.Component {
                             });
                         }}
                         >
-                        <div className="flex flex-row items-center pl-1 text-gray-700">
+                        <div className="flex flex-row items-center pl-1">
                             <i className="w-12 text-center fa-solid fa-search"></i>
                             <div className="">Search</div>
                         </div>
                     </button>
 
                     <NavLink to="/cloud">
-                        <div className="flex flex-row items-center pl-1 mt-8 text-gray-700">
+                        <div className="flex flex-row items-center pl-1 mt-8">
                             <i className="w-12 text-center fa-solid fa-cloud"></i>
                             <div className="">Cloud</div>
                         </div>
                     </NavLink>
 
                     <NavLink to="/local">
-                        <div className="flex flex-row items-center pl-1 mt-2 text-gray-700">
+                        <div className="flex flex-row items-center pl-1 mt-2">
                             <i className="w-12 text-center fa-solid fa-hard-drive"></i>
                             <div className="">Local</div>
                         </div>
                     </NavLink>
 
                     <NavLink to="/upload">
-                        <div className="flex flex-row items-center pl-1 mt-2 text-gray-700">
+                        <div className="flex flex-row items-center pl-1 mt-2">
                             <i className="w-12 text-center fa-solid fa-upload"></i>
                             <div className="">Upload</div>
                         </div>
                     </NavLink>
 
                     <button
-                        className="flex flex-row items-center pl-1 mt-8 text-gray-700 cursor-pointer"
+                        className="flex flex-row items-center pl-1 mt-8 cursor-pointer"
                         onClick={event => this.notImplemented(event)}
                         >
                         <i className="w-12 text-center fa-regular fa-star"></i>
@@ -165,7 +165,7 @@ export class App extends React.Component {
                     </button>
 
                     <button
-                        className="flex flex-row items-center pl-1 mt-2 text-gray-700 cursor-pointer"
+                        className="flex flex-row items-center pl-1 mt-2 cursor-pointer"
                         onClick={event => this.notImplemented(event)}
                         >
                         <i className="w-12 text-center fa-regular fa-images"></i>
@@ -173,7 +173,7 @@ export class App extends React.Component {
                     </button>
 
                     <button
-                        className="flex flex-row items-center pl-1 mt-2 text-gray-700 cursor-pointer"
+                        className="flex flex-row items-center pl-1 mt-2 cursor-pointer"
                         onClick={event => this.notImplemented(event)}
                         >
                         <i className="w-12 text-center fa-regular fa-trash-can"></i>
@@ -181,7 +181,7 @@ export class App extends React.Component {
                     </button>
 
                     <NavLink to="/info">
-                        <div className="flex flex-row items-center pl-1 mt-8 text-gray-700">
+                        <div className="flex flex-row items-center pl-1 mt-8">
                             <i className="w-12 text-center fa-solid fa-circle-exclamation"></i>
                             <div className="">Learn more</div>
                         </div>
@@ -253,7 +253,7 @@ export class App extends React.Component {
                                 to="/search"
                                 onClick={event => this.notImplemented(event)}
                                 >
-                                <div className="flex flex-row items-center text-gray-700">
+                                <div className="flex flex-row items-center">
                                     <i className="w-4 text-center fa-solid fa-share-nodes"></i>
                                     <div className="hidden sm:block ml-2">Share</div>
                                 </div>
@@ -263,7 +263,7 @@ export class App extends React.Component {
                                 className="mr-4"
                                 to="/cloud"
                             >
-                                <div className="flex flex-row items-center text-gray-700">
+                                <div className="flex flex-row items-center">
                                     <i className="w-4 text-center fa-regular fa-star"></i>
                                     <div className="hidden sm:block ml-2">Favorite</div>
                                 </div>
@@ -278,7 +278,7 @@ export class App extends React.Component {
                                     event.stopPropagation();
                                 }}
                             >
-                                <div className="flex flex-row items-center text-gray-700">
+                                <div className="flex flex-row items-center">
                                     <i className="w-4 text-center fa-solid fa-circle-info"></i>
                                     <div className="hidden sm:block ml-2">Info</div>
                                 </div>
@@ -289,7 +289,7 @@ export class App extends React.Component {
                                 to="/trash"
                                 onClick={event => this.notImplemented(event)}
                             >
-                                <div className="flex flex-row items-center text-gray-700">
+                                <div className="flex flex-row items-center">
                                     <i className="w-3 text-center fa-regular fa-trash-can"></i>
                                     <div className="hidden sm:block ml-2">Trash</div>
                                 </div>
@@ -300,7 +300,7 @@ export class App extends React.Component {
                                 to="/menu"
                                 onClick={event => this.notImplemented(event)}
                             >
-                                <div className="flex flex-row items-center text-gray-700">
+                                <div className="flex flex-row items-center">
                                     <i className="w-2 text-center fa-solid fa-ellipsis-vertical"></i>
                                     <div className="hidden sm:block ml-2">More</div>
                                 </div>
@@ -308,27 +308,31 @@ export class App extends React.Component {
                         </div>
                     </div>
 
-                    <div className="photo-content flex-grow flex portrait:flex-col landscape:flex-row justify-center">
-                        <div className="flex flex-col justify-center">
-                            <button
-                                className="p-1 px-3"
-                                onClick={event => this.notImplemented(event)}
-                                >
-                                <i className="fa-solid fa-arrow-left"></i>
-                            </button>
-                        </div>
-                        {this.state.selectedImage && 
-                            <img
-                                src={this.state.selectedImage.thumb}
-                            />
-                        }
-                        <div className="flex flex-col justify-center">
-                            <button
-                                className="p-1 px-3"
-                                onClick={event => this.notImplemented(event)}
-                                >
-                                <i className="fa-solid fa-arrow-right"></i>
-                            </button>
+                    <div className="photo-content flex-grow flex flex-col justify-center">
+                        <div className="flex flex-grow portrait:flex-row landscape:flex-row">
+                            <div className="flex flex-col justify-center">
+                                <button
+                                    className="p-1 px-3"
+                                    onClick={event => this.notImplemented(event)}
+                                    >
+                                    <i className="fa-solid fa-arrow-left"></i>
+                                </button>
+                            </div>
+                            <div className="flex-grow flex portrait:flex-col landscape:flex-row justify-center">
+                                {this.state.selectedImage && 
+                                    <img
+                                        src={this.state.selectedImage.thumb}
+                                    />
+                                }
+                            </div>
+                            <div className="flex flex-col justify-center">
+                                <button
+                                    className="p-1 px-3"
+                                    onClick={event => this.notImplemented(event)}
+                                    >
+                                    <i className="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

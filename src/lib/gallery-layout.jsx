@@ -32,10 +32,10 @@ export function GalleryLayout({
                             style={{
                                 fontSize: "0.9rem",
                                 color: "rgb(60,64,67)",
-                                fontWeight: 500,
+                                fontWeight: 600,
                                 lineHeight: "1.25rem",
                                 letterSpacing: ".0178571429em",
-                                padding: "1.25em",
+                                padding: "1em",
                             }}
                             >
                             {row.group}
@@ -56,7 +56,7 @@ export function GalleryLayout({
                             return (
                                 <img 
                                     style={{
-                                        padding: "1px",
+                                        padding: "2px",
                                     }}
                                     onClick={() => {
                                         if (onImageClick) {
